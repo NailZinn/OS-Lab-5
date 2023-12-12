@@ -3,6 +3,12 @@
 
 int main(int argc, char const *argv[])
 {
+    if (argc < 3)
+    {
+        printf("wrong number of args, expected 3 but got %d\n", argc);
+        return 1;
+    }
+
     FILE *file = fopen(argv[1], "r");
 
     if (file == NULL)

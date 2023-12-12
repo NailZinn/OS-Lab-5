@@ -61,6 +61,12 @@ int traverse_directory(const char* path, int min_size, int max_size, FILE *outpu
 
 int main(int argc, char const *argv[])
 {
+    if (argc < 5)
+    {
+        printf("wrong number of args, expected 5 but got %d\n", argc);
+        return 1;
+    }
+
     const char *path = argv[1];
     const int min_size = atoi(argv[2]);
     const int max_size = atoi(argv[3]);

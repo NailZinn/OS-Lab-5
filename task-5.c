@@ -14,6 +14,12 @@ void print_directory(DIR* directory)
 
 int main(int argc, char const *argv[])
 {
+    if (argc < 2)
+    {
+        printf("wrong number of args, expected 2 but got %d\n", argc);
+        return 1;
+    }
+    
     DIR *current_directory = opendir(".");
     DIR *user_directory = opendir(argv[1]);
 
